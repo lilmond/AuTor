@@ -1,0 +1,4 @@
+# This is just an example. These are some of my real Tor guard nodes.
+165.232.127.17
+165.232.124.12
+139.59.146.86
