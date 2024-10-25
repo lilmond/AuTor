@@ -4,6 +4,7 @@ import time
 
 THREADS = 10
 PRIVATE_KEY = "torservers_id_ed25519"
+SERVER_LIST = "server_list.txt"
 TORRC = "torrcs/guard.txt"
 
 def install_server(hostname: str):
@@ -36,7 +37,7 @@ def install_server(hostname: str):
     ssh_client.close()
 
 def main():
-    with open("server_list.txt", "r") as file:
+    with open(SERVER_LIST, "r") as file:
         server_list = [x.strip() for x in file.read().splitlines() if x.strip() and not x.strip().startswith("#")]
         file.close()
     
