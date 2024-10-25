@@ -1,4 +1,6 @@
-Nickname    lilmond@git/AuTor  # nicknames must be between 1 and 19 characters. Change "myNiceRelay" to something you like
+# nicknames must be between 1 and 19 characters inclusive, and must contain only the characters [a-zA-Z0-9].
+Nickname    LilmondGitAuTor  # nicknames must be between 1 and 19 characters. Change "myNiceRelay" to something you like
+
 ContactInfo kishnovsukaman@gmail.com - Donate: 17nXfqRRiSGDpx1XEh3veHA6gyCLAktFk9  # Write your e-mail and be aware it will be published
 ORPort      443          # You might use a different port, should you want to
 ExitRelay   0
