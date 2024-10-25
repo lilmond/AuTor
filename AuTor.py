@@ -13,25 +13,28 @@ def install_server(hostname: str):
 
     sftp_client = ssh_client.open_sftp()
 
-    print(f"APT Updating at {hostname}.")
+    print(f"APT Updating at {hostname}")
     stdin, stdout, stderr = ssh_client.exec_command("apt update -y")
     stdout.read()
-    print(f"APT update done at {hostname}.")
+    print(f"APT update done at {hostname}")
 
-    print(f"Installing Tor at {hostname}.")
+    print(f"Installing Tor at {hostname}")
     stdin, stdout, stderr = ssh_client.exec_command("apt install tor -y")
     stdout.read()
-    print(f"Tor installation completed at {hostname}.")
+    print(f"Tor installation completed at {hostname}")
 
-    print(f"Uploading torrc config.")
+    print(f"Uploading {TORRC} config to {hostname}:/etc/tor/torrc")
     sftp_client.put(TORRC, "/etc/tor/torrc")
-    print(f"Uploaded torrc config.")
+    print(f"Uploaded {TORRC} config to {hostname}:/etc/tor/torrc")
 
-    print(f"Restarting Tor at {hostname}.")
-    stdin, stdout, stderr = ssh_client.exec_command("apt install tor -y")
+    print(f"Restarting Tor at {hostname}")
+    stdin, stdout, stderr = ssh_client.exec_command("systemctl restart tor@default")
     stdout.read()
     print(f"Tor successfully installed at {hostname}. Thanks for contributing to the Tor community!")
     
+    sftp_client.close()
+    ssh_client.close()
+
 def main():
     with open("server_list.txt", "r") as file:
         server_list = [x.strip() for x in file.read().splitlines() if x.strip() and not x.strip().startswith("#")]
