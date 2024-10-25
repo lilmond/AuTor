@@ -18,11 +18,11 @@ First things first, you'll need a server list, which quite obviously you own and
 
 Write down your server IP's into the `server_list.txt` file.
 
-Next thing you'll have to do is to copy your private key into AuTor directory.
+Next thing you'll have to do is to copy your **private key** into **AuTor** directory.
 
-Now edit AuTor.py and set PRIVATE_KEY variable to according to your private key file name.
+Now edit `AuTor.py` and set `PRIVATE_KEY` variable according to your **private key's file** name.
 
-Now you might wanna edit TORRC variable for your own custom torrc configuration.
+Now you might wanna edit `TORRC` variable for your own custom torrc configuration.
 
 Run AuTor via `python AuTor.py`
 
