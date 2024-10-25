@@ -16,6 +16,8 @@ pip install -r requirements.txt
 # Distribute Tor Nodes
 First things first, you'll need a server list, which quite obviously you own and have access to (**via private key**).
 
+Write down your server IP into the `server_list.txt` file.
+
 Next thing you'll have to do is to copy your private key into AuTor directory.
 
 Now open AuTor.py and edit PRIVATE_KEY variable to your private key file name.
